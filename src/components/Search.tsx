@@ -3,9 +3,9 @@ import { FaSearch } from 'react-icons/fa';
 import { from, BehaviorSubject } from 'rxjs';
 import { filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-import useObservable from 'hooks/useObservable';
+import useObservable from 'Hooks/useObservable';
 import fetchReposByName from 'API/repos';
-import { Repo } from 'Repo';
+import { Repo } from 'Repo.model';
 import ReposGrid from './ReposGrid';
 
 const searchSubject = new BehaviorSubject('');
@@ -25,13 +25,16 @@ const Search = () => {
   useObservable(SearchRepos$, setRepos, setLoading, setErrors);
 
   useEffect(() => {
-    if (!query || query.length <= 2) {
+    if (!query) {
+      setLoading(false);
+    } else if (query.length <= 2) {
       setRepos([]);
     }
   }, [query]);
 
   const handleSearchRepoChange = (evt: any) => {
     const query = evt.target.value;
+
     setQuery(query);
     setLoading(true);
     searchSubject.next(query);

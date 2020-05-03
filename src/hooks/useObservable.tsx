@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Repo } from 'Repo';
+import { Repo } from 'Repo.model';
 
 const useObservable = (observable: any, setter: Function, loading: Function, errors: Function) => {
   useEffect(() => {

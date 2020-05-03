@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Card from './Card';
-import { Repo } from 'Repo';
+import { Repo } from 'Repo.model';
 
 interface Props {
   repos: Repo[];
@@ -11,10 +11,10 @@ function ReposGrid({ repos }: Props) {
   return (
     <ul className="repos-container">
       {repos.map((repo: Repo, index: number) => {
-        const { owner, html_url, stargazers_count, watchers_count } = repo;
+        const { id, owner, html_url, stargazers_count, watchers_count } = repo;
         const { login, avatar_url } = owner;
         return (
-          <li key={repo.id}>
+          <li key={id}>
             <Card
               header={`#${index + 1}`}
               stars={stargazers_count}
