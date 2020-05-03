@@ -1,4 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Search GitHub Repos by Name
+
+This is sample POC project that has been build to demonstate the ability of my tecinical skill set in React eco systm. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Library used
+
+### IDE setup
+
+[VS Code](https://code.visualstudio.com/) is used to develop this project
+
+#### Plugins used
+
+- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Prettier Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - It is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary. Prettier does exdents the `eslint-config-prettier` and `eslint-plugin-prettier`
+- [pretty-quick](https://github.com/azz/pretty-quick) - Runs code formatting on files changes.
+- [husky](https://github.com/typicode/husky) - Pre commit Hook - Husky can prevent bad `git commit` and `git push`
+
+#### 3rd Party packages
+
+- [rxjs](https://github.com/ReactiveX/RxJS) - Easy to use React Bootstrap 4 components
+- [scss](https://sass-lang.com/) - CSS preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+
+### Archtecture
+
+Tried to use the new evolving concept of Hook. Used the default hooks that comes with React namelu `useState` and `useEffect` to manage the state of the application. Also created an custome hook to wrap the text input field as an observable. As this is a very simple project I don't see the need for full state management like `redux`
+
+### Folder Structure
+
+Kept the files just 2 level depth from the project `src` folder. Enabled absolute import for more code readability.
+
+## Improvements
+
+    1. Move the results into a different component
+    2. Use router to navigate between the components
+    3. Cache the Repos that are already fetched
+    4. Unit Test to be added
+
+## Install
+
+    $ git clone https://github.com/sdmels/search-git-repos.git
+    $ cd search-git-repos
+    $ yarn install
 
 ## Available Scripts
 
@@ -42,3 +83,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+"# search-git-repos"
